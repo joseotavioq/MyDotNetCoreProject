@@ -1,0 +1,19 @@
+﻿apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: web-front-netcore-itau
+spec:
+  replicas: 1
+  selector:
+   matchLabels:
+    app: web-front-netcore-itau
+  template:
+   metadata:
+    labels:
+     app: web-front-netcore-itau
+   spec:
+    containers:
+    - name: mydotnetcoreproject
+      image: joseotavio/mydotnetcoreproject:v1
+      ports:
+      - containerPort: 80
